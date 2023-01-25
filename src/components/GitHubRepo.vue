@@ -22,12 +22,11 @@ import {api} from '@/api/api.js'
             userSearch: null,
         }),
         methods: {            
-            procuraUsuariosGithub: debounceDecorator(function () { // atenção não use o arrow function, quebra o decorator por algum motivo.
+            procuraUsuariosGithub: debounceDecorator(async function () { // atenção não use o arrow function, quebra o decorator por algum motivo.
                 this.userLoading = true
-                api.searchUsers(this.userSearch).then(data => {
-                    this.userList = data.items
-                    this.userLoading = false
-                })
+                const data = await api.searchUsers(this.userSearch)
+                this.userList = data.items
+                this.userLoading = false
             }, 500),
         },
         watch: {

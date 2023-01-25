@@ -1,10 +1,6 @@
 <template>
-    <v-container>
-      <v-row class="text-center">
-        <v-col cols="12">
-            <GitHubRepo/>
-        </v-col>
-      </v-row>
+  <v-container>
+      <GitHubRepo/>
     </v-container>
   </template>
   

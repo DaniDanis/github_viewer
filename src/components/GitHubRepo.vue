@@ -11,7 +11,9 @@
 </template>
   
 <script>
-import {debounceDecorator} from '@/helpers/debouncer.js'        
+import {debounceDecorator} from '@/helpers/debouncer.js' 
+import {api} from '@/api/api.js'
+ 
     export default {  
         data: () => ({
             user: null,
@@ -22,14 +24,11 @@ import {debounceDecorator} from '@/helpers/debouncer.js'
         methods: {            
             procuraUsuariosGithub: debounceDecorator(function () { // atenção não use o arrow function, quebra o decorator por algum motivo.
                 this.userLoading = true
-                setTimeout(() => {
-                    this.userList = [
-                        {login: "João"},
-                        {login: "José"}
-                    ]
+                api.searchUsers(this.userSearch).then(data => {
+                    this.userList = data.items
                     this.userLoading = false
-                }, 1000)
-            }, 500)
+                })
+            }, 500),
         },
         watch: {
             userSearch () {

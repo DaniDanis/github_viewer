@@ -11,23 +11,29 @@
 </template>
   
 <script>
-    export default { 
-
+import {debounceDecorator} from '@/helpers/debouncer.js'        
+    export default {  
         data: () => ({
             user: null,
-            userList: {},
-            loading: false,
+            userList: [],
+            userLoading: false,
             userSearch: null,
         }),
-        watch: {
-            userSearch () {
+        methods: {            
+            procuraUsuariosGithub: debounceDecorator(function () { // atenção não use o arrow function, quebra o decorator por algum motivo.
                 this.userLoading = true
                 setTimeout(() => {
                     this.userList = [
                         {login: "João"},
                         {login: "José"}
                     ]
-                }, 1000).then(this.userLoading = false)
+                    this.userLoading = false
+                }, 1000)
+            }, 500)
+        },
+        watch: {
+            userSearch () {
+                this.procuraUsuariosGithub()
             }
         }
     }

@@ -21,12 +21,14 @@ export const api = {
         const result = await fetch(url)
         return result.json()
     },
-    async searchRepos(username, page){
-        if (!page) {
-            page = 1
-        }
+    async searchRepos(username){
         const url = `https://api.github.com/users/${username}/repos`
         const data = await fetch_all_pages(url)
         return data
-    }      
+    },
+    async listIssues(owner, name, page){
+        const url = `https://api.github.com/repos/${owner}/${name}/issues?page=${page}`
+        const data = await fetch(url)
+        return await data.json()
+    }    
 }

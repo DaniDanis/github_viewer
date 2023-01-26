@@ -23,7 +23,8 @@ import {api} from '~api'
  
     export default {  
         props: [
-            'repo'
+            'repo',
+            'user'
         ],
         data: () => ({
             owner: '',
@@ -63,9 +64,13 @@ import {api} from '~api'
                     this.owner = this.repo.owner.login,
                     this.repoName = this.repo.name
                     this.callContents()
+                }
+            },
+            user() {
+                this.dir = ''
+                this.contentTree = []
             }
         }
-    }
     }
 </script>
   

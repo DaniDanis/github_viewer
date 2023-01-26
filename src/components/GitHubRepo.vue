@@ -57,6 +57,7 @@ import {api} from '~api'
         watch: {
             userSearch () {
                 this.procuraUsuariosGithub()
+                this.$emit('userSelected', this.user)
             },
             user(){
                 this.listaRepositorios()

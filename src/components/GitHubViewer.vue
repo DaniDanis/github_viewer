@@ -1,8 +1,8 @@
 <template>
   <v-container>
-      <GitHubRepo @repoSelected="onRepoSelected"/>
+      <GitHubRepo @repoSelected="onRepoSelected" @userSelected="saveUser"/>
       <GitHubIssues :repo="repo" v-if="false"/>
-      <GitHubRepoContent :repo="repo"/>      
+      <GitHubRepoContent :repo="repo" :user="user"/>      
     </v-container>
   </template>
   
@@ -17,11 +17,15 @@
             GitHubRepoContent
         },
         data: () => ({
-          repo: null
+          repo: null,
+          user: null
         }),
         methods: {
           onRepoSelected(repo) {
             this.repo = repo
+          },
+          saveUser(user) {
+            this.user = user
           }
         }
     }

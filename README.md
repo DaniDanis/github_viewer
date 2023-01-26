@@ -1,24 +1,24 @@
-# github_viewer
+## Github vuewer, um projeto by Tony Lampada, desenvolvido by Daniel Dantas
 
-## Project setup
+## Setup do projeto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Roda isso ai meu bom
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compila os arquivo para subir em prod
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Roda aquele lint para parar de reclamar
 ```
 npm run lint
 ```
+### OBS:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Caso esteja vendo essa observação não tive o tempo para embelezar o front, estarei subindo nos proximos dias essa att. 

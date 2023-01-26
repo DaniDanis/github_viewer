@@ -1,8 +1,9 @@
 <template>
     <div>
+        <p>{{ dir }}</p>
         <v-btn v-if="dir.length > 0" @click="turnBack">VOLTA</v-btn>
         <div v-for="content in contentTree" :key="content.name">
-            <v-btn v-if="content.type == 'dir'" @click="changeDir(content.name)">{{ content.name }}</v-btn>
+            <a v-if="content.type == 'dir'" @click="changeDir(content.name)" width="150px">{{ content.name }}</a>
             <div v-else>{{ content.name }}</div>
         </div>
     </div>

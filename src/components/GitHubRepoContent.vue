@@ -4,8 +4,14 @@
         <p>{{ dir }}</p>
         <v-btn v-if="dir.length > 0" @click="turnBack">VOLTA</v-btn>
         <div v-for="content in contentTree" :key="content.name">
-            <font-awesome-icon icon="folder" />
-            <a v-if="content.type == 'dir'" @click="changeDir(content.name)" width="150px">{{ content.name }}</a>
+            <a v-if="content.type == 'dir'" @click="changeDir(content.name)" width="150px"><v-icon color="primary">mdi-folder-open</v-icon>{{ content.name }}</a>
+            <div v-else-if="content.name.includes('.py')"><v-icon>mdi-language-python</v-icon>{{ content.name }}</div>
+            <div v-else-if="content.name.includes('md')"><v-icon>mdi-language-markdown</v-icon>{{ content.name }}</div>
+            <div v-else-if="content.name.includes('.git')"><v-icon>mdi-git</v-icon>{{ content.name }}</div>
+            <div v-else-if="content.name.includes('.eslint')"><v-icon>mdi-eslint</v-icon>{{ content.name }}</div>
+            <div v-else-if="content.name.includes('.json')"><v-icon>mdi-code-json</v-icon>{{  content.name }}</div>
+            <div v-else-if="content.name.includes('.js')"><v-icon>mdi-language-javascript</v-icon>{{  content.name }}</div>
+            <div v-else-if="content.name.includes('.ico')"><v-icon>mdi-puzzle-star</v-icon>{{  content.name }}</div>
             <div v-else>{{ content.name }}</div>
         </div>
     </div>

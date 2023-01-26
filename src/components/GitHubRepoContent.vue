@@ -11,7 +11,8 @@
             <div v-else-if="content.name.includes('.eslint')"><v-icon>mdi-eslint</v-icon>{{ content.name }}</div>
             <div v-else-if="content.name.includes('.json')"><v-icon>mdi-code-json</v-icon>{{  content.name }}</div>
             <div v-else-if="content.name.includes('.js')"><v-icon>mdi-language-javascript</v-icon>{{  content.name }}</div>
-            <div v-else-if="content.name.includes('.ico')"><v-icon>mdi-puzzle-star</v-icon>{{  content.name }}</div>
+            <div v-else-if="content.name.includes('.vue')"><v-icon>mdi-vuejs</v-icon>{{  content.name }}</div>
+            <div v-else-if="content.name.includes('html')"><v-icon>mdi-language-html5</v-icon>{{  content.name }}</div>
             <div v-else>{{ content.name }}</div>
         </div>
     </div>

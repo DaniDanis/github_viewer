@@ -1,8 +1,10 @@
+<script src="https://kit.fontawesome.com/1ba32175c2.js" crossorigin="anonymous"></script>
 <template>
     <div>
         <p>{{ dir }}</p>
         <v-btn v-if="dir.length > 0" @click="turnBack">VOLTA</v-btn>
         <div v-for="content in contentTree" :key="content.name">
+            <font-awesome-icon icon="folder" />
             <a v-if="content.type == 'dir'" @click="changeDir(content.name)" width="150px">{{ content.name }}</a>
             <div v-else>{{ content.name }}</div>
         </div>

@@ -6,13 +6,13 @@
         <div v-for="content in contentTree" :key="content.name">
             <a v-if="content.type == 'dir'" @click="changeDir(content.name)" width="150px"><v-icon color="primary">mdi-folder-open</v-icon>{{ content.name }}</a>
             <div v-else-if="content.name.includes('.py')"><v-icon>mdi-language-python</v-icon>{{ content.name }}</div>
-            <div v-else-if="content.name.includes('md')"><v-icon>mdi-language-markdown</v-icon>{{ content.name }}</div>
+            <div v-else-if="content.name.includes('.md')"><v-icon>mdi-language-markdown</v-icon>{{ content.name }}</div>
             <div v-else-if="content.name.includes('.git')"><v-icon>mdi-git</v-icon>{{ content.name }}</div>
             <div v-else-if="content.name.includes('.eslint')"><v-icon>mdi-eslint</v-icon>{{ content.name }}</div>
             <div v-else-if="content.name.includes('.json')"><v-icon>mdi-code-json</v-icon>{{  content.name }}</div>
             <div v-else-if="content.name.includes('.js')"><v-icon>mdi-language-javascript</v-icon>{{  content.name }}</div>
             <div v-else-if="content.name.includes('.vue')"><v-icon>mdi-vuejs</v-icon>{{  content.name }}</div>
-            <div v-else-if="content.name.includes('html')"><v-icon>mdi-language-html5</v-icon>{{  content.name }}</div>
+            <div v-else-if="content.name.includes('.html')"><v-icon>mdi-language-html5</v-icon>{{  content.name }}</div>
             <div v-else>{{ content.name }}</div>
         </div>
     </div>
